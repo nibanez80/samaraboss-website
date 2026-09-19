@@ -31,7 +31,7 @@ const BookSession = () => {
           <div
             className="calendly-inline-widget"
             data-url={CALENDLY_URL}
-            style={{ minWidth: '320px', height: '700px' }}
+            style={{ minWidth: '320px', height: '1250px' }}
           />
         </div>
       </div>
