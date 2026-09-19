@@ -1,0 +1,229 @@
+diff -ruN original/src/components/Biography.tsx extracted/src/components/Biography.tsx
+--- a/src/components/Biography.tsx	2026-09-15 04:08:14.000000000 +0000
++++ b/src/components/Biography.tsx	2026-09-15 04:38:36.193772866 +0000
+@@ -13,7 +13,7 @@
+           {/* Coach Photo and Bio */}
+           <div className="space-y-8">
+             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+-              <img src="https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1776529233622_9f9c1080.JPG" alt="Samara Boss Coach" className="w-48 h-48 rounded-full object-cover shadow-lg" />
++              <img src="/images/biography-photo.jpg" alt="Samara Boss Coach" className="w-48 h-48 rounded-full object-cover shadow-lg" />
+               <div className="flex-1 text-center md:text-left">
+                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">The New Standard of Recovery</h3>
+                 <p className="text-gray-600 leading-relaxed mb-6 text-left">Samara knows this path because she’s walked it.
+diff -ruN original/src/components/HeroSection.tsx extracted/src/components/HeroSection.tsx
+--- a/src/components/HeroSection.tsx	2026-09-15 04:08:14.000000000 +0000
++++ b/src/components/HeroSection.tsx	2026-09-15 04:38:36.192598821 +0000
+@@ -8,7 +8,7 @@
+   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-16">
+       {/* Background Image */}
+       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+-      backgroundImage: `url('https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1762665308130_b6945b66.jpg')`
++      backgroundImage: `url('/images/hero-background.jpg')`
+     }}>
+         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-green-900/40"></div>
+       </div>
+diff -ruN original/src/components/Newsletter.tsx extracted/src/components/Newsletter.tsx
+--- a/src/components/Newsletter.tsx	2026-09-15 04:08:14.000000000 +0000
++++ b/src/components/Newsletter.tsx	2026-09-15 04:38:36.194200285 +0000
+@@ -44,7 +44,7 @@
+       <div className="max-w-4xl mx-auto px-6 text-center">
+         <div 
+           className="bg-cover bg-center rounded-2xl p-12 md:p-16 relative overflow-hidden"
+-          style={{ backgroundImage: `url('https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028404807_e98c252b.webp')` }}
++          style={{ backgroundImage: `url('/images/newsletter.webp')` }}
+         >
+           <div className="absolute inset-0 bg-blue-900/70"></div>
+           <div className="relative z-10">
+diff -ruN original/src/components/Testimonials.tsx extracted/src/components/Testimonials.tsx
+--- a/src/components/Testimonials.tsx	2026-09-15 04:08:14.000000000 +0000
++++ b/src/components/Testimonials.tsx	2026-09-15 04:38:36.193050667 +0000
+@@ -3,82 +3,82 @@
+   const [currentIndex, setCurrentIndex] = useState(0);
+   const testimonials = [{
+     name: "Jay F.",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028384490_f43ef7c4.webp",
++    image: "/images/testimonial-1.webp",
+     text: "Samara brings a wealth of knowledge from her vast experience, both from her own personal journey, and her involvement helping numerous others. She exudes a supportive, positive attitude that is essential in guiding people gently, yet assertively, and above all, successfully, through the TSM based Thrive program.",
+     location: "Colorado, US"
+   }, {
+     name: "Coaching Client",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028386294_356b94a1.webp",
++    image: "/images/testimonial-2.webp",
+     text: "Thank you, Samara. You rock! You are such a positive force. I love the energy you bring. Because of your coaching I reached 5 out of the 6 goals I set for my Thanksgiving holiday! I got a good night's sleep on Thanksgiving and was up early the next AM for a morning run.",
+     location: "Thrive Member"
+   }, {
+     name: "Coaching Client",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028388008_4d0976c4.webp",
++    image: "/images/testimonial-3.webp",
+     text: "Samara's positivity is positively infectious! I had my coaching call with Samara today. It was great! She just radiates positivity. Very helpful and motivating.",
+     location: "British Columbia"
+   }, {
+     name: "David",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028389712_bdba390b.webp",
++    image: "/images/testimonial-4.webp",
+     text: "I was deep in twelve steps, having done 90-meetings in 90 days three times over the years. But the program had so little science. I'm VERY excited about TSM and hope to be a TSM success story one day. I had some setbacks which is why I began the Samara calls and am so proud of my progress since I started working with her!",
+     location: "Missouri, US"
+   }, {
+     name: "Coaching Client",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028391430_ef120e06.webp",
++    image: "/images/testimonial-5.webp",
+     text: "Went to a company Christmas party last night and only had 2 glasses of wine. Looking at my graph for the past 14 weeks I honestly already feel cured. Only drinking 1-2 on the days I drink and having 1-3 alcohol free days per week is soo awesome. I have drank a bottle of wine a day for the last 20 years so I am feeling soo grateful. Samara is the best coach!",
+     location: "Washington, US"
+   }, {
+     name: "Erin",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028393203_82dd133a.webp",
++    image: "/images/testimonial-6.webp",
+     text: "TSM has been a challenging journey for me with lots of highs and lows. Having Samara as my guide and coach throughout this process has been vital to my success. She is extremely educated about TSM and helps normalize and brainstorm setbacks and difficult times. I highly recommend Samara to have in your corner to help navigate the TSM experience.",
+     location: "Thrive Member"
+   }, {
+     name: "Thrive Member",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028384490_f43ef7c4.webp",
++    image: "/images/testimonial-1.webp",
+     text: "I just started watching Katie and Samara's monthly LIVE Q&A Podcasts. Two huge influences on my life. These two are like rock stars to me and I always look forward to watch the Q&A. Thank you both for being who you are and for the ways in which you both have improved my life.",
+     location: "South Carolina, US"
+   }, {
+     name: "Mary F.",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028386294_356b94a1.webp",
++    image: "/images/testimonial-2.webp",
+     text: "Well, a stomach bug sure curtailed my drinking! 2 days alcohol free! NO headache and great sleep last night! My body gave me the reset I needed. PLUS I had the best session with Samara yesterday. Samara picks me up and gives me such hope.",
+     location: "Canada"
+   }, {
+     name: "Coaching Client",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028388008_4d0976c4.webp",
++    image: "/images/testimonial-3.webp",
+     text: "Samara is the BEST coach ever!!!!",
+     location: "California, US"
+   }, {
+     name: "Tim A.",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028389712_bdba390b.webp",
++    image: "/images/testimonial-4.webp",
+     text: "Samara has been such a great coach allowing a private secure outlet for me while going through my addiction TSM journey. I so appreciate her nonjudgmental, compassionate communications and understanding of my situation and struggles. I love her upbeat attitude and how she inspires and creates a friendship style experience. She and you have actually saved my life.",
+     location: "Missouri, US"
+   }, {
+     name: "Coaching Client",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028391430_ef120e06.webp",
++    image: "/images/testimonial-5.webp",
+     text: "I'm grateful I found Thrive and I'm very grateful Samara was my coach. Thank you for meeting me where I was and having such a big heart to help people.",
+     location: "Thrive Member"
+   }, {
+     name: "Manny",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028393203_82dd133a.webp",
++    image: "/images/testimonial-6.webp",
+     text: "Samara doesn't take this mission lightly. I know that. She is a rarity. Samara is endowed with genuineness and authenticity.",
+     location: "North Carolina, US"
+   }, {
+     name: "Dan",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028384490_f43ef7c4.webp",
++    image: "/images/testimonial-1.webp",
+     text: "Samara is top notch. She is an absolute natural at this. She has a combo of making me feel comfortable and being extraordinarily motivational.",
+     location: "Virginia, US"
+   }, {
+     name: "Dan",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028386294_356b94a1.webp",
++    image: "/images/testimonial-2.webp",
+     text: "If you haven't found out already, when it comes to helping u get out of the alcohol trap, Samara is an absolute all-star.",
+     location: "Virginia, US"
+   }, {
+     name: "Pamela",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028388008_4d0976c4.webp",
++    image: "/images/testimonial-3.webp",
+     text: "Samara has the 'it' factor going for her as far as, 'can this person help me out of the alcohol trap'? Samara is the most motivational coach I've ever worked with.",
+     location: "New York, US"
+   }, {
+     name: "Coaching Client",
+-    image: "https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028389712_bdba390b.webp",
++    image: "/images/testimonial-4.webp",
+     text: "I just watched your interview with Katie on the success stories. It was inspiring to say the least. Your journey and dedication to helping others is truly remarkable.",
+     location: "Thrive Member"
+   }];
+@@ -101,7 +101,7 @@
+ 
+         <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 md:p-12 mb-12">
+           <div className="flex flex-col md:flex-row items-center gap-8">
+-            <img src="https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1762663429975_27c8a0ac.png" alt={testimonials[currentIndex].name} className="w-32 h-32 rounded-full object-cover shadow-lg" />
++            <img src="/images/testimonials-badge.png" alt={testimonials[currentIndex].name} className="w-32 h-32 rounded-full object-cover shadow-lg" />
+             <div className="flex-1 text-center md:text-left">
+               <blockquote className="text-xl md:text-2xl text-gray-700 italic mb-6 leading-relaxed" data-mixed-content="true">
+                 "{testimonials[currentIndex].text}"
+@@ -138,7 +138,7 @@
+         <div className="grid md:grid-cols-3 gap-6">
+           {testimonials.slice(0, 3).map((testimonial, index) => <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all">
+               <div className="flex items-center mb-4">
+-                <img src="https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1762663429975_27c8a0ac.png" alt={testimonial.name} className="w-12 h-12 rounded-full object-cover mr-4" />
++                <img src="/images/testimonials-badge.png" alt={testimonial.name} className="w-12 h-12 rounded-full object-cover mr-4" />
+                 <div>
+                   <p className="font-semibold text-gray-800">{testimonial.name}</p>
+                   <p className="text-sm text-gray-600">{testimonial.location}</p>
+diff -ruN original/src/components/ThriveAffiliate.tsx extracted/src/components/ThriveAffiliate.tsx
+--- a/src/components/ThriveAffiliate.tsx	2026-09-15 04:08:14.000000000 +0000
++++ b/src/components/ThriveAffiliate.tsx	2026-09-15 04:38:36.194033831 +0000
+@@ -54,7 +54,7 @@
+                 aria-label="Visit Thrive Alcohol Recovery"
+               >
+                 <img
+-                  src="https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1776619583920_a3dd4522.jpg"
++                  src="/images/thrive-affiliate.jpg"
+                   alt="Thrive Alcohol Recovery logo"
+                   className="max-w-full max-h-full object-contain rounded-2xl shadow-lg"
+                 />
+diff -ruN original/src/components/WhyBeFree.tsx extracted/src/components/WhyBeFree.tsx
+--- a/src/components/WhyBeFree.tsx	2026-09-15 04:08:14.000000000 +0000
++++ b/src/components/WhyBeFree.tsx	2026-09-15 04:38:36.194375238 +0000
+@@ -3,15 +3,15 @@
+   const benefits = [{
+     title: "A New Way to Drink Less",
+     description: "A gentle science-based approach to drinking less - where cutting back becomes easier and no longer something you have to fight for.",
+-    image: "https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1776532761960_0d6cc2db.jpg"
++    image: "/images/why-be-free-1.jpg"
+   }, {
+     title: "Physical Health",
+     description: "Improve sleep quality, boost energy levels, and give your body the chance to heal and thrive.",
+-    image: "https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1776534147077_cdb0d847.jpg"
++    image: "/images/why-be-free-2.jpg"
+   }, {
+     title: "Authentic Relationships",
+     description: "Build deeper, more meaningful connections with loved ones based on genuine presence and trust.",
+-    image: "https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1776532995351_4e2d2454.jpg"
++    image: "/images/why-be-free-3.jpg"
+   }];
+   return <section className="py-20 bg-gradient-to-b from-slate-50 to-blue-50">
+       <div className="max-w-7xl mx-auto px-6">
+@@ -56,7 +56,7 @@
+               </ul>
+             </div>
+             <div className="h-80 bg-cover bg-center rounded-xl" style={{
+-            backgroundImage: `url('https://d64gsuwffb70l.cloudfront.net/68d8a45d05a86c5d04805d3e_1759028399623_d2602ac6.webp')`
++            backgroundImage: `url('/images/why-be-free-4.webp')`
+           }}></div>
+           </div>
+         </div>
+diff -ruN original/src/pages/Resources.tsx extracted/src/pages/Resources.tsx
+--- a/src/pages/Resources.tsx	2026-09-15 04:08:14.000000000 +0000
++++ b/src/pages/Resources.tsx	2026-09-15 04:38:36.194537166 +0000
+@@ -17,7 +17,7 @@
+   title: 'I took a pill to help fix my drinking problem',
+   date: 'September 2024',
+   excerpt: 'Personal narrative and explainer by journalist Annabel Fenwick Elliott describing the Sinclair Method and how naltrexone was used to reduce drinking; discusses practicalities and cultural resistance.',
+-  image: 'https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1776538602333_8128a0d3.jpg',
++  image: '/images/resources-1.jpg',
+   url: 'https://www.telegraph.co.uk/health-fitness/diet/alcohol/naltrexone-alcohol-pill/'
+ }, {
+ 
+@@ -25,7 +25,7 @@
+   title: 'The Science Behind Recovery: Let\u2019s Talk About Naltrexone',
+   date: 'April 2025',
+   excerpt: 'Magazine-style explainer by Smita Das, MD, PhD, MPH, (Clinical Associate Professor at Stanford and VP of Psychiatry and Complex Care at Lyra Health) summarising how naltrexone blocks reward, its clinical uses (alcohol and opioid disorders), tolerability, and why it remains under-utilised; recommends greater clinician awareness.',
+-  image: 'https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1776540027565_270dd420.jpg',
++  image: '/images/resources-2.jpg',
+   url: 'https://www.psychologytoday.com/gb/blog/the-science-behind-recovery/202504/the-science-behind-recovery-lets-talk-about-naltrexone'
+ }, {
+ 
+@@ -33,7 +33,7 @@
+   title: 'Naltrexone Is the Ozempic for Alcoholism',
+   date: 'May 2025',
+   excerpt: 'Opinion piece by Mark S. Gold, M.D. framing naltrexone as a low-cost drug gaining renewed attention; argues for wider adoption while noting limitations.',
+-  image: 'https://d64gsuwffb70l.cloudfront.net/682a2a1f8bd6c2593f18d34e_1776539621710_2c0d838b.jpg',
++  image: '/images/resources-3.jpg',
+   url: 'https://www.psychologytoday.com/gb/blog/addiction-outlook/202505/naltrexone-is-the-ozempic-for-alcoholism'
+ }];
+ 

@@ -1,0 +1,27 @@
+--- a/src/pages/Admin.tsx	2026-09-15 04:08:14.000000000 +0000
++++ b/src/pages/Admin.tsx	2026-09-15 06:05:45.093050595 +0000
+@@ -113,8 +113,11 @@
+   const fetchSubscribers = async () => {
+     setLoading(true);
+     try {
+-      const { data, error } = await supabase.functions.invoke('get-newsletter-subscribers');
+-      
++      const sessionToken = sessionStorage.getItem(SESSION_KEY);
++      const { data, error } = await supabase.functions.invoke('get-newsletter-subscribers', {
++        headers: { 'x-admin-token': sessionToken || '' },
++      });
++
+       if (error) {
+         throw error;
+       }
+@@ -139,8 +142,10 @@
+   const handleDelete = async (id: string) => {
+     setDeletingId(id);
+     try {
++      const sessionToken = sessionStorage.getItem(SESSION_KEY);
+       const { data, error } = await supabase.functions.invoke('delete-newsletter-subscriber', {
+         body: { id },
++        headers: { 'x-admin-token': sessionToken || '' },
+       });
+ 
+       if (error) {

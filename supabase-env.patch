@@ -1,0 +1,24 @@
+--- a/src/lib/supabase.ts	2026-09-15 04:08:14.000000000 +0000
++++ b/src/lib/supabase.ts	2026-09-15 06:05:56.504791425 +0000
+@@ -1,10 +1,15 @@
+ import { createClient } from '@supabase/supabase-js';
+ 
+-
+ // Initialize database client
+-const supabaseUrl = 'https://kowmfeqseyvkzwargpem.databasepad.com';
+-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImU4N2UzZmJhLTJkMmItNDg3NS1iYjRlLTMwOGEzZmNkZGEzZSJ9.eyJwcm9qZWN0SWQiOiJrb3dtZmVxc2V5dmt6d2FyZ3BlbSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzY4MDc4MDg1LCJleHAiOjIwODM0MzgwODUsImlzcyI6ImZhbW91cy5kYXRhYmFzZXBhZCIsImF1ZCI6ImZhbW91cy5jbGllbnRzIn0.qwx_U7ZvaFk69pqbPiZ8uIxXxVuZRw-jwA_DKntXxd4';
+-const supabase = createClient(supabaseUrl, supabaseKey);
++const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
++const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+ 
++if (!supabaseUrl || !supabaseKey) {
++  throw new Error(
++    'Missing Supabase environment variables. Make sure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set in your .env file.'
++  );
++}
++
++const supabase = createClient(supabaseUrl, supabaseKey);
+ 
+-export { supabase };
+\ No newline at end of file
++export { supabase };
